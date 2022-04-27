@@ -69,5 +69,14 @@ public class NematodeVisualiser extends PApplet
 	public void draw()
 	{
 		drawNematodes(i);
+
+		line(width/4, height/2,  (width/4) - (width * 0.1f) , height/2);
+		line((width/4) - (width * 0.1f) , height/2, (width/4) - (width * 0.075f), height/2 - (height * 0.02f));
+		line((width/4) - (width * 0.1f) , height/2, (width/4) - (width * 0.075f), height/2 + (height * 0.02f));
+
+		line(width - width/4, height/2,  width - (width/4) + (width * 0.1f) , height/2);
+		line(width - (width/4) + (width * 0.1f) , height/2, width - width/4 + (width * 0.075f), height/2 - (height * 0.02f));
+		line(width - (width/4) + (width * 0.1f) , height/2, width - width/4 + (width * 0.075f), height/2 + (height * 0.02f));
+
 	}
 }
