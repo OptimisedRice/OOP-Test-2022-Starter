@@ -37,7 +37,26 @@ public class NematodeVisualiser extends PApplet
 					
 	}
 
-
+	public void mouseClicked()
+	{
+		if(mouseX > 0 && mouseX < width/3 && mouseY > height/3 && mouseY < height - height/3)
+		{
+			i--;
+			if(i == -1)
+			{
+				i = nematodes.size() - 1;
+			}
+		}
+		if(mouseX > width - width/3 && mouseX < width && mouseY > height/3 && mouseY < height - height/3)
+		{
+			i++;
+			if(i == nematodes.size())
+			{
+				i = 0;
+			}
+		}
+	}
+	
 	public void settings()
 	{
 		size(800, 800);
