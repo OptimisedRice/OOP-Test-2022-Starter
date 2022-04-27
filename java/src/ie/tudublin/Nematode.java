@@ -87,7 +87,32 @@ public class Nematode
         {
             nv.pushMatrix();
             nv.translate(nv.width/2, (nv.height/2 - (length/2 * nemaWidth)) + (nemaWidth * seg));
+            if(eyes && seg == 0)
+            {
+                nv.line(
+                    PApplet.sin(PApplet.radians(180-45)) * nemaWidth/2, 
+                    PApplet.cos(PApplet.radians(180-45)) * nemaWidth/2, 
+                    PApplet.sin(PApplet.radians(180-45)) * nemaWidth, 
+                    PApplet.cos(PApplet.radians(180-45)) * nemaWidth
+                );
+
+                nv.circle(PApplet.sin(PApplet.radians(180-45)) * nemaWidth + 5, PApplet.cos(PApplet.radians(180-45)) * nemaWidth - 5, 10);
+                
+                nv.line(
+                    PApplet.sin(PApplet.radians(180+45)) * nemaWidth/2, 
+                    PApplet.cos(PApplet.radians(180+45)) * nemaWidth/2, 
+                    PApplet.sin(PApplet.radians(180+45)) * nemaWidth, 
+                    PApplet.cos(PApplet.radians(180+45)) * nemaWidth
+                );
+
+                nv.circle(PApplet.sin(PApplet.radians(180+45)) * nemaWidth - 5, PApplet.cos(PApplet.radians(180+45)) * nemaWidth - 5, 10);
+            }
             nv.circle(0, 0, nemaWidth);
+            if(limbs)
+            {
+                nv.line(-nemaWidth, 0, -nemaWidth/2, 0);
+                nv.line(nemaWidth/2, 0, nemaWidth, 0);
+            }
             nv.popMatrix();
 
         }
