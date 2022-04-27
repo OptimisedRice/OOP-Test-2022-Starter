@@ -72,10 +72,25 @@ public class Nematode
 
     public void render(NematodeVisualiser nv)
     {
+        int nemaWidth = 40;
+        int textsize = 40;
+        nv.background(0);
         nv.fill(255);
-        nv.textSize(14);
-        nv.textAlign(PApplet.CENTER);
-        nv.text(name, nv.width/2, nv.height - 30);
+        nv.textSize(textsize);
+        nv.textAlign(PApplet.CENTER, PApplet.CENTER);
+        nv.text(name, nv.width/2, (nv.height/2 - (length/2 * nemaWidth) - (textsize * 2)));
+
+        nv.strokeWeight(2);
+        nv.stroke(255);
+        nv.noFill();
+        for(int seg = 0; seg < length; seg++)
+        {
+            nv.pushMatrix();
+            nv.translate(nv.width/2, (nv.height/2 - (length/2 * nemaWidth)) + (nemaWidth * seg));
+            nv.circle(0, 0, nemaWidth);
+            nv.popMatrix();
+
+        }
     }
 
 }

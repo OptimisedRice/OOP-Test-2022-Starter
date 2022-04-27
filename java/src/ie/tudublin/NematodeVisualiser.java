@@ -22,6 +22,7 @@ public class NematodeVisualiser extends PApplet
 				{
 					i = nematodes.size() - 1;
 				}
+				break;
 			}
 			case RIGHT:
 			{
@@ -30,6 +31,7 @@ public class NematodeVisualiser extends PApplet
 				{
 					i = 0;
 				}
+				break;
 			}	
 		}	
 					
@@ -45,7 +47,8 @@ public class NematodeVisualiser extends PApplet
 	{
 		colorMode(HSB);
 		background(0);
-		smooth();				
+		smooth();
+		loadNematodes();			
 	}
 	
 	public void loadNematodes()
