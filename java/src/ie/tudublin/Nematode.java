@@ -72,16 +72,17 @@ public class Nematode
 
     public void render(NematodeVisualiser nv)
     {
+        float color = PApplet.map(nv.i, 0, nv.nematodes.size() - 1, 0, 255);
+        nv.stroke(color, 255, 255);
         int nemaWidth = 40;
         int textsize = 40;
         nv.background(0);
-        nv.fill(255);
+        nv.fill(color, 255, 255);
         nv.textSize(textsize);
         nv.textAlign(PApplet.CENTER, PApplet.CENTER);
         nv.text(name, nv.width/2, (nv.height/2 - (length/2 * nemaWidth) - (textsize * 2)));
 
         nv.strokeWeight(3);
-        nv.stroke(255);
         nv.noFill();
         for(int seg = 0; seg < length; seg++)
         {
