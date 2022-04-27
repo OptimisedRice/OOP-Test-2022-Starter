@@ -1,5 +1,6 @@
 package ie.tudublin;
 
+import processing.core.PApplet;
 import processing.data.TableRow;
 
 public class Nematode
@@ -67,6 +68,14 @@ public class Nematode
 
     public void setEyes(boolean eyes) {
         this.eyes = eyes;
+    }
+
+    public void render(NematodeVisualiser nv)
+    {
+        nv.fill(255);
+        nv.textSize(14);
+        nv.textAlign(PApplet.CENTER);
+        nv.text(name, nv.width/2, nv.height - 30);
     }
 
 }
